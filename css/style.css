@@ -2026,3 +2026,43 @@ footer {
     }
 
 }
+
+
+/* =====================================================
+   FIX HERO IMAGE MOBILE
+===================================================== */
+
+@media (max-width: 767.98px) {
+
+    .hero-image-wrapper {
+
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        padding: 6px;
+
+        border-radius: 28px;
+
+        background: white;
+
+        overflow: hidden;
+
+    }
+
+    .hero-image-wrapper img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        border-radius: 22px;
+
+        border: 3px solid var(--red);
+
+    }
+
+}
