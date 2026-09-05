@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tape Gembong Bu Endang</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fffaf0;
+            color: #351d17;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar-brand {
+            font-family: 'Baloo 2', cursive;
+            font-size: 27px;
+            font-weight: 800;
+            color: #a80f0f !important;
+        }
+
+        .navbar-brand span {
+            color: #f3c900;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #44231c !important;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #c51616 !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-order-nav {
+            background: #c91515;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 22px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-order-nav:hover {
+            background: #a80d0d;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,21,21,0.25);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 10% 20%, #fff8bd 0%, transparent 25%),
+                radial-gradient(circle at 90% 30%, #ffe86e 0%, transparent 30%),
+                linear-gradient(135deg, #fff5b5, #ffe36b);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: #ffcf00;
+            opacity: 0.12;
+            border-radius: 50%;
+            top: -180px;
+            right: -100px;
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #d71919;
+            opacity: 0.06;
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero-small {
+            color: #b10e0e;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 90px);
+            line-height: 0.95;
+            font-weight: 800;
+            color: #351d17;
+        }
+
+        .hero h1 span {
+            color: #c91414;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #704b42;
+            max-width: 520px;
+            margin: 25px 0;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background: #c91515;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: #a90d0d;
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(180,0,0,0.25);
+        }
+
+        .btn-secondary-custom {
+            background: white;
+            color: #c91515;
+            border: 2px solid #c91515;
+            padding: 12px 27px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-secondary-custom:hover {
+            background: #c91515;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           HERO IMAGE
+        ========================= */
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 570px;
+            margin: auto;
+            animation: fadeRight 1s ease forwards;
+        }
+
+        .hero-image-circle {
+            width: min(500px, 90vw);
+            height: min(500px, 90vw);
+            margin: auto;
+            border-radius: 50%;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 25px 60px rgba(110,65,0,0.18);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 7px solid #b80f0f;
+            display: block;
+        }
+
+
+        /* =========================
+           PRICE BADGE
+        ========================= */
+
+        .price-badge {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            background: #ffdb28;
+            border: 5px dashed #b80f0f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #a50e0e;
+            font-weight: 800;
+            z-index: 5;
+            box-shadow: 10px 10px 0 rgba(190,80,0,0.15);
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .price-badge strong {
+            font-size: 29px;
+            line-height: 1;
+        }
+
+        .price-badge small {
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           FLOATING CARD
+        ========================= */
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 18px;
+            padding: 13px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            z-index: 6;
+        }
+
+        .floating-card i {
+            width: 45px;
+            height: 45px;
+            background: #fff1a8;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c91414;
+            font-size: 20px;
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .floating-card span {
+            display: block;
+            color: #9b817a;
+            font-size: 12px;
+        }
+
+        .floating-left {
+            left: 0;
+            bottom: 45px;
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .floating-right {
+            right: 0;
+            bottom: 0;
+            animation: floating 4s ease-in-out infinite 1s;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            position: relative;
+            margin-top: -45px;
+            z-index: 20;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 15px 45px rgba(80,40,0,0.10);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(80,40,0,0.16);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 18px;
+            background: #fff0a2;
+            color: #c91414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .feature-box h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .feature-box p {
+            margin: 0;
+            color: #8c7770;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: #c91414;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #c91414;
+        }
+
+        .section-description {
+            color: #806b64;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-section {
+            background: #fffdf8;
+        }
+
+        /*
+        CARD MENU SEKARANG HORIZONTAL
+        */
+
+        .menu-slider {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 20px 10px 35px;
+            scroll-behavior: smooth;
+
+            scrollbar-width: thin;
+            scrollbar-color: #c91515 #f7eadc;
+        }
+
+        .menu-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .menu-slider::-webkit-scrollbar-track {
+            background: #f7eadc;
+            border-radius: 20px;
+        }
+
+        .menu-slider::-webkit-scrollbar-thumb {
+            background: #c91515;
+            border-radius: 20px;
+        }
+
+        .product-card {
+            flex: 0 0 280px;
+            width: 280px;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid #f1e9df;
+            box-shadow: 0 10px 30px rgba(70,40,0,0.06);
+            transition: 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(70,40,0,0.14);
+        }
+
+        .product-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            background: #f8edcf;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-body {
+            padding: 23px;
+            min-height: 245px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-tag {
+            display: inline-block;
+            width: fit-content;
+            background: #fff0a3;
+            color: #a50e0e;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .product-body h3 {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .product-body p {
+            color: #89746c;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 43px;
+            margin-top: auto;
+        }
+
+        .price {
+            color: #c91414;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 43px;
+            white-space: nowrap;
+        }
+
+        .order-small {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            background: #c91414;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .order-small:hover {
+            background: #9f0c0c;
+            color: white;
+            transform: rotate(10deg) scale(1.1);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-section {
+            background: #ffe97a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 430px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(70,40,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-content h2 {
+            font-size: 55px;
+            font-weight: 800;
+        }
+
+        .about-content h2 span {
+            color: #c91414;
+        }
+
+        .about-content p {
+            color: #765e56;
+            line-height: 1.9;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+
+        .check-list li {
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .check-list i {
+            color: #c91414;
+            margin-right: 10px;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+
+        /* =========================
+           LOKASI
+        ========================= */
+        .location-section { background: #fffdf8; }
+        .location-card { background:#fff; border:1px solid #f1e9df; border-radius:25px; padding:30px; height:100%; box-shadow:0 12px 35px rgba(70,40,0,.08); transition:.3s; }
+        .location-card:hover { transform:translateY(-7px); box-shadow:0 18px 40px rgba(70,40,0,.13); }
+        .location-icon { width:58px; height:58px; border-radius:18px; background:#fff0a3; color:#c91414; display:flex; align-items:center; justify-content:center; font-size:25px; margin-bottom:18px; }
+        .location-card h3 { font-size:25px; font-weight:800; margin-bottom:12px; }
+        .location-info { color:#806b64; font-size:14px; line-height:1.8; margin-bottom:18px; }
+        .location-hours { background:#fff8d8; border-radius:15px; padding:13px 16px; margin-bottom:20px; }
+        .location-hours div { font-size:14px; font-weight:700; color:#5d3027; margin:3px 0; }
+        .location-hours i { color:#c91414; margin-right:8px; }
+        .btn-map { display:inline-flex; align-items:center; gap:8px; background:#c91515; color:#fff; padding:11px 18px; border-radius:30px; text-decoration:none; font-weight:700; transition:.3s; }
+        .btn-map:hover { background:#a90d0d; color:#fff; transform:translateY(-3px); }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 90px 0;
+            background: #b50f0f;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            top: -200px;
+            left: -100px;
+        }
+
+        .cta h2 {
+            font-size: 55px;
+            font-weight: 800;
+        }
+
+        .cta p {
+            color: #ffdede;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-wa:hover {
+            color: white;
+            background: #1daf55;
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #351512;
+            color: white;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: #d7c3bd;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .hero {
+                padding: 100px 0 130px;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                margin-top: 70px;
+            }
+
+            .features {
+                margin-top: -30px;
+            }
+
+            .floating-left {
+                left: 5%;
+            }
+
+            .floating-right {
+                right: 5%;
+            }
+
+            .about-content {
+                margin-top: 40px;
+            }
+        }
+
+
+        @media (max-width: 767px) {
+
+            .navbar-brand {
+                font-size: 22px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 80px 0 110px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-image-circle {
+                width: 330px;
+                height: 330px;
+            }
+
+            .price-badge {
+                width: 90px;
+                height: 90px;
+                right: 0;
+                top: -20px;
+            }
+
+            .price-badge strong {
+                font-size: 22px;
+            }
+
+            .price-badge small {
+                font-size: 10px;
+            }
+
+            .floating-card {
+                padding: 9px 12px;
+                border-radius: 14px;
+            }
+
+            .floating-card i {
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+                font-size: 15px;
+            }
+
+            .floating-card strong {
+                font-size: 11px;
+            }
+
+            .floating-card span {
+                font-size: 9px;
+            }
+
+            .floating-left {
+                left: 0;
+                bottom: 20px;
+            }
+
+            .floating-right {
+                right: 0;
+                bottom: -15px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            /*
+            CARD DI HP LEBIH BESAR
+            */
+
+            .product-card {
+                flex: 0 0 285px;
+                width: 285px;
+            }
+
+            .product-image {
+                height: 240px;
+            }
+
+            .product-body {
+                min-height: 240px;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-content h2 {
+                font-size: 42px;
+            }
+
+            .cta h2 {
+                font-size: 42px;
+            }
+
+            .features {
+                margin-top: -20px;
+            }
+
+        }
+
+    </style>
+
+<style>
+/* ===== WHY CHOOSE US ===== */
+.why-section {
+    padding: 85px 20px;
+    background: linear-gradient(180deg, #fffaf2 0%, #fff 100%);
+    position: relative;
+    overflow: hidden;
+}
+.why-section::before,
+.why-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.why-section::before {
+    width: 260px;
+    height: 260px;
+    background: rgba(255, 214, 76, .13);
+    top: -100px;
+    left: -100px;
+}
+.why-section::after {
+    width: 220px;
+    height: 220px;
+    background: rgba(214, 23, 23, .07);
+    bottom: -100px;
+    right: -80px;
+}
+.why-header {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.why-badge {
+    display: inline-block;
+    padding: 8px 17px;
+    border-radius: 999px;
+    background: #ffe98a;
+    color: #b20f0f;
+    font-weight: 800;
+    font-size: .82rem;
+    margin-bottom: 14px;
+}
+.why-header h2 {
+    margin: 0 0 12px;
+    font-weight: 800;
+}
+.why-header p {
+    margin: 0;
+    color: #806f67;
+    font-size: 1.05rem;
+}
+.why-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+.why-card {
+    background: #fff;
+    border: 1px solid #f0e4d8;
+    border-radius: 24px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(73, 42, 23, .07);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.why-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(73, 42, 23, .12);
+}
+.why-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 17px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1b8;
+    color: #d61717;
+    font-size: 1.65rem;
+}
+.why-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 9px;
+    font-weight: 800;
+}
+.why-card p {
+    margin: 0;
+    color: #806f67;
+    line-height: 1.65;
+    font-size: .94rem;
+}
+.why-highlight {
+    max-width: 1120px;
+    margin: 28px auto 0;
+    padding: 22px 26px;
+    border-radius: 22px;
+    background: #d61717;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 14px 30px rgba(214, 23, 23, .18);
+}
+.why-highlight strong {
+    font-size: 1.08rem;
+}
+.why-highlight span {
+    display: block;
+    margin-top: 5px;
+    opacity: .92;
+}
+@media (max-width: 900px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .why-section { padding: 65px 16px; }
+    .why-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Tape <span>Gembong</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#tentang">
+                        Tentang
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#galeri">
+                        Galeri
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#lokasi">
+                        Lokasi
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+
+                    <a
+                        class="btn-order-nav"
+                        href="#pesan">
+
+                        Pesan Sekarang
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="hero-content">
+
+                    <div class="hero-small">
+                        Tape Gembong Bu Endang
+                    </div>
+
+                    <h1>
+                        Manis,<br>
+                        <span>Legit &</span><br>
+                        Bikin Nagih!
+                    </h1>
+
+                    <p class="hero-description">
+                        Nikmati tape singkong mentega khas Gembong
+                        dengan rasa manis, tekstur lembut dan aroma
+                        yang bikin susah berhenti ngemil.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#menu"
+                            class="btn-primary-custom">
+
+                            <i class="bi bi-basket2-fill"></i>
+                            Lihat Menu
+
+                        </a>
+
+                        <a
+                            href="https://wa.me/62895385157030"
+                            target="_blank"
+                            class="btn-secondary-custom">
+
+                            <i class="bi bi-whatsapp"></i>
+                            Pesan via WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="hero-image-wrapper">
+
+                    <div class="hero-image-circle">
+
+                        <img
+                            src="assets/tape-closeup.png"
+                            alt="Tape Singkong Mentega">
+
+                    </div>
+
+
+                    <div class="price-badge">
+
+                        <strong>10K</strong>
+
+                        <small>/ box</small>
+
+                    </div>
+
+
+                    <div class="floating-card floating-left">
+
+                        <i class="bi bi-heart-fill"></i>
+
+                        <div>
+                            <strong>Favorit</strong>
+                            <span>Pelanggan</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-right">
+
+                        <i class="bi bi-stars"></i>
+
+                        <div>
+                            <strong>Manis & Legit</strong>
+                            <span>Rasa khas</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="row g-3">
+
+            <div class="col-lg-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Rasa Pilihan</h5>
+
+                        <p>
+                            Dibuat dari bahan berkualitas
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-box-seam-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Siap Dipesan</h5>
+
+                        <p>
+                            Cocok untuk camilan & oleh-oleh
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="feature-box">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Pesan via WhatsApp</h5>
+
+                        <p>
+                            Hubungi Bu Endang langsung
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="section menu-section" id="menu">
+
+    <div class="container">
+
+        <div class="text-center mb-4 reveal">
+
+            <div class="section-label">
+                Menu Favorit
+            </div>
+
+            <h2 class="section-title">
+                Enaknya Pilih <span>Yang Mana?</span>
+            </h2>
+
+            <p class="section-description">
+                Berbagai pilihan jajanan lezat dari Tape Gembong
+                Bu Endang.
+            </p>
+
+        </div>
+
+
+        <!-- HORIZONTAL MENU -->
+
+        <div class="menu-slider reveal">
+
+
+            <!-- 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/tape-closeup.png"
+                        alt="Tape Singkong Mentega">
+
+                </div>
+
+                <div class="product-body">
+
+                    <span class="product-tag">
+                        FAVORIT
+                    </span>
+
+                    <h3>
+                        Tape Singkong Mentega
+                    </h3>
+
+                    <p>
+                        Tape singkong lembut dengan rasa manis
+                        dan aroma mentega yang khas.
+                    </p>
+
+                    <div class="product-footer">
+
+                        <div class="price">
+                            10K
+                        </div>
+
+                        <a
+                            href="https://wa.me/62895385157030?text=Halo%20Bu%20Endang,%20saya%20ingin%20pesan%20Tape%20Singkong%20Mentega"
+                            target="_blank"
+                            class="order-small">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/tape-basket.jpg"
+                        alt="Tape Bakar Mentega">
+
+                </div>
+
+                <div class="product-body">
+
+                    <span class="product-tag">
+                        SPECIAL
+                    </span>
+
+                    <h3>
+                        Tape Bakar Mentega
+                    </h3>
+
+                    <p>
+                        Tape dibakar hingga harum dengan
+                        cita rasa mentega yang menggoda.
+                    </p>
+
+                    <div class="product-footer">
+
+                        <div class="price">Hubungi Kami</div>
+
+                        <a
+                            href="https://wa.me/62895385157030?text=Halo%20Bu%20Endang,%20saya%20ingin%20pesan%20Tape%20Bakar%20Mentega"
+                            target="_blank"
+                            class="order-small">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/tape-ketan.jpg"
+                        alt="Tape Ketan">
+
+                </div>
+
+                <div class="product-body">
+
+                    <span class="product-tag">
+                        MANIS
+                    </span>
+
+                    <h3>
+                        Tape Ketan
+                    </h3>
+
+                    <p>
+                        Tape ketan dengan rasa manis,
+                        segar dan tekstur yang lembut.
+                    </p>
+
+                    <div class="product-footer">
+
+                        <div class="price">Hubungi Kami</div>
+
+                        <a
+                            href="https://wa.me/62895385157030?text=Halo%20Bu%20Endang,%20saya%20ingin%20pesan%20Tape%20Ketan"
+                            target="_blank"
+                            class="order-small">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/brownies.jpg"
+                        alt="Brownies">
+
+                </div>
+
+                <div class="product-body">
+
+                    <span class="product-tag">
+                        JAJANAN
+                    </span>
+
+                    <h3>
+                        Brownies
+                    </h3>
+
+                    <p>
+                        Brownies lembut dan lezat sebagai
+                        teman ngopi maupun bersantai.
+                    </p>
+
+                    <div class="product-footer">
+
+                        <div class="price">
+                            15K
+                        </div>
+
+                        <a
+                            href="https://wa.me/62895385157030?text=Halo%20Bu%20Endang,%20saya%20ingin%20pesan%20Brownies"
+                            target="_blank"
+                            class="order-small">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/bolen-pisang.jpg"
+                        alt="Bolen Pisang">
+
+                </div>
+
+                <div class="product-body">
+
+                    <span class="product-tag">
+                        JAJANAN
+                    </span>
+
+                    <h3>
+                        Bolen Pisang
+                    </h3>
+
+                    <p>
+                        Bolen pisang dengan rasa manis dan
+                        tekstur lembut, cocok untuk camilan.
+                    </p>
+
+                    <div class="product-footer">
+
+                        <div class="price">
+                            Hubungi Kami
+                        </div>
+
+                        <a
+                            href="https://wa.me/62895385157030?text=Halo%20Bu%20Endang,%20saya%20ingin%20pesan%20Bolen%20Pisang"
+                            target="_blank"
+                            class="order-small">
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="text-center mt-2">
+
+            <small style="color:#9b817a;">
+                <i class="bi bi-arrow-left-right"></i>
+                Geser untuk melihat menu lainnya
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section about-section" id="tentang">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6 reveal">
+
+                <div class="about-image">
+
+                    <img
+                        src="assets/tentang-kami.png"
+                        alt="Tape Gembong Bu Endang">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 reveal">
+
+                <div class="about-content">
+
+                    <div class="section-label">
+                        Tentang Kami
+                    </div>
+
+                    <h2>
+                        Tape Gembong
+                        <span>Bu Endang</span>
+                    </h2>
+
+                    <p>
+                        Tape Gembong Bu Endang menghadirkan tape
+                        singkong dengan rasa manis, tekstur lembut
+                        dan kualitas yang selalu dijaga.
+                    </p>
+
+                    <p>
+                        Selain tape singkong mentega, tersedia juga
+                        tape bakar mentega, tape ketan dan berbagai
+                        jajanan lainnya.
+                    </p>
+
+                    <ul class="check-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Rasa manis dan legit
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Tekstur lembut
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Cocok untuk oleh-oleh
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Bisa pesan langsung via WhatsApp
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="section" id="galeri">
+
+    <div class="container">
+
+        <div class="text-center mb-5 reveal">
+
+            <div class="section-label">
+                Galeri
+            </div>
+
+            <h2 class="section-title">
+                Lihat <span>Produknya</span>
+            </h2>
+
+            <p class="section-description">
+                Beberapa tampilan produk Tape Gembong Bu Endang.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4 reveal">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="assets/tape-closeup.png"
+                        alt="Tape Mentega">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 reveal">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="assets/tape-basket.jpg"
+                        alt="Tape Bakar">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 reveal">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="assets/tape-ketan.jpg"
+                        alt="Tape Ketan">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================
+     LOKASI
+========================= -->
+
+<!-- ===== KENAPA HARUS BELI DI SINI? ===== -->
+<section class="why-section" id="kenapa">
+    <div class="why-header">
+        <span class="why-badge">✨ KENAPA HARUS BELI DI SINI?</span>
+        <h2>Lebih dari Sekadar Tape, Ini Rasa yang Bikin Kangen ❤️</h2>
+        <p>
+            Kami menjaga kualitas dari bahan hingga siap dinikmati,
+            supaya setiap gigitan tetap terasa enak, fresh, dan bikin nagih.
+        </p>
+    </div>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-icon"><i class="bi bi-award-fill"></i></div>
+            <h3>Bahan Berkualitas</h3>
+            <p>
+                Dipilih dari bahan berkualitas untuk menghasilkan rasa,
+                aroma, dan tekstur yang lebih nikmat.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon"><i class="bi bi-heart-fill"></i></div>
+            <h3>Dibuat dengan Sepenuh Hati</h3>
+            <p>
+                Diolah dengan perhatian pada rasa dan kualitas,
+                agar setiap pesanan terasa istimewa.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon"><i class="bi bi-bag-heart-fill"></i></div>
+            <h3>Cocok untuk Semua Momen</h3>
+            <p>
+                Enak untuk ngemil sendiri, teman ngopi, oleh-oleh,
+                sampai jadi sajian untuk keluarga.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon"><i class="bi bi-truck"></i></div>
+            <h3>Free Ongkir Area Grobogan</h3>
+            <p>
+                Nikmati <strong>free ongkir</strong> untuk area
+                Grobogan dan Purwodadi Kota*.
+            </p>
+        </div>
+    </div>
+
+
+<p style="max-width:1120px;margin:14px auto 0;text-align:center;color:#9a877d;font-size:.82rem;position:relative;z-index:1;">
+    *Free ongkir berlaku untuk area Grobogan dan Purwodadi Kota, sesuai jangkauan pengantaran.
+</p>
+
+    <div class="why-highlight">
+        <strong>🔥 Sekali coba, siap-siap jadi langganan!</strong>
+        <span>
+            Rasa rumahan, harga bersahabat, dan siap menemani momen manis kamu.
+        </span>
+    </div>
+</section>
+
+<section class="section location-section" id="lokasi">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <div class="section-label">Lokasi Jualan</div>
+            <h2 class="section-title">Temukan <span>Bu Endang</span></h2>
+            <p class="section-description">
+                Kamu bisa menemukan Tape Gembong Bu Endang di lokasi berikut.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6 reveal">
+                <div class="location-card">
+                    <div class="location-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <h3>Grobogan, Central Java</h3>
+                    <div class="location-info">
+                        Jl. Pangeran Puger, Grobogan, Purwodadi, Grobogan Regency, Central Java 58152
+                    </div>
+                    <div class="location-hours">
+                        <div><i class="bi bi-calendar-week-fill"></i>Jum'at – Senin</div>
+                        <div><i class="bi bi-clock-fill"></i>10.00 – habis</div>
+                    </div>
+                    <a class="btn-map" href="https://www.google.com/maps/search/?api=1&query=Jl.+Pangeran+Puger%2C+Grobogan%2C+Purwodadi%2C+Grobogan+Regency%2C+Central+Java+58152" target="_blank">
+                        <i class="bi bi-map-fill"></i> Lihat di Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 reveal">
+                <div class="location-card">
+                    <div class="location-icon"><i class="bi bi-shop"></i></div>
+                    <h3>LapakCar Free Day</h3>
+                    <div class="location-info">
+                        Depan Nice So, Jl. R. Suprapto No.77B, Jetis Barat, Jetis, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 58111
+                    </div>
+                    <div class="location-hours">
+                        <div><i class="bi bi-calendar-week-fill"></i>Setiap Minggu</div>
+                        <div><i class="bi bi-clock-fill"></i>07.00 – 10.00 WIB</div>
+                    </div>
+                    <a class="btn-map" href="https://www.google.com/maps/search/?api=1&query=LapakCar+Free+Day+Depan+Nice+So+Jl.+R.+Suprapto+No.77B%2C+Jetis+Barat%2C+Jetis%2C+Purwodadi%2C+Grobogan%2C+Jawa+Tengah+58111" target="_blank">
+                        <i class="bi bi-map-fill"></i> Lihat di Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="pesan">
+
+    <div class="container text-center">
+
+        <div class="reveal">
+
+            <div class="section-label" style="color:#ffe34e;">
+                Mau Pesan?
+            </div>
+
+            <h2>
+                Siap Menemani<br>
+                Ngemil Kamu!
+            </h2>
+
+            <p class="mt-3 mb-4">
+                Hubungi Bu Endang untuk melakukan pemesanan.
+            </p>
+
+            <a
+                href="https://wa.me/62895385157030"
+                target="_blank"
+                class="btn-wa">
+
+                <i class="bi bi-whatsapp fs-4"></i>
+
+                0895-3851-57030
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Tape Gembong Bu Endang | All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements =
+        document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+
+        revealElements.forEach(element => {
+
+            const windowHeight =
+                window.innerHeight;
+
+            const elementTop =
+                element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 120) {
+
+                element.classList.add('active');
+
+            }
+
+        });
+
+    }
+
+    window.addEventListener(
+        'scroll',
+        revealOnScroll
+    );
+
+    revealOnScroll();
+
+
+    /* =========================
+       CLOSE NAVBAR MOBILE
+    ========================= */
+
+    document
+        .querySelectorAll('.navbar-nav .nav-link')
+        .forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                const menu =
+                    document.querySelector('#navbarMenu');
+
+                if (menu.classList.contains('show')) {
+
+                    const bsCollapse =
+                        bootstrap.Collapse
+                        .getInstance(menu);
+
+                    if (bsCollapse) {
+                        bsCollapse.hide();
+                    }
+
+                }
+
+            });
+
+        });
+
+
+    /* =========================
+       DRAG MENU DENGAN MOUSE
+    ========================= */
+
+    const slider =
+        document.querySelector('.menu-slider');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+
+        isDown = true;
+
+        slider.style.cursor = 'grabbing';
+
+        startX = e.pageX - slider.offsetLeft;
+
+        scrollLeft = slider.scrollLeft;
+
+    });
+
+    slider.addEventListener('mouseleave', () => {
+
+        isDown = false;
+
+        slider.style.cursor = 'grab';
+
+    });
+
+    slider.addEventListener('mouseup', () => {
+
+        isDown = false;
+
+        slider.style.cursor = 'grab';
+
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+
+        if (!isDown) return;
+
+        e.preventDefault();
+
+        const x =
+            e.pageX - slider.offsetLeft;
+
+        const walk =
+            (x - startX) * 1.5;
+
+        slider.scrollLeft =
+            scrollLeft - walk;
+
+    });
+
+    slider.style.cursor = 'grab';
+
+</script>
+
+
+</body>
+</html>
